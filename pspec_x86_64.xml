@@ -1,0 +1,36 @@
+<PISI>
+    <Source>
+        <Name>cloud-print-connector</Name>
+        <Packager>
+            <Name>Pierre-Yves</Name>
+            <Email>pyu@riseup.net</Email>
+        </Packager>
+        <License>BSD-3-Clause</License>
+        <PartOf>desktop.core</PartOf>
+        <Summary xml:lang="en">Google Cloud Print Connector</Summary>
+        <Description xml:lang="en">Share printers from your computer with ChromeOS and Android devices, using the Cloud Print Connector. The Connector is a purpose-built system process.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://solus-project.com/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>cloud-print-connector</Name>
+        <Summary xml:lang="en">Google Cloud Print Connector</Summary>
+        <Description xml:lang="en">Share printers from your computer with ChromeOS and Android devices, using the Cloud Print Connector. The Connector is a purpose-built system process.
+</Description>
+        <PartOf>desktop.core</PartOf>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="library">/usr/lib64/systemd/system/cloud-print-connector.service</Path>
+            <Path fileType="data">/usr/share/cloud-print-connector.service/gcp-cups-connector.config.json</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="1">
+            <Date>2017-11-07</Date>
+            <Version>1.13</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Pierre-Yves</Name>
+            <Email>pyu@riseup.net</Email>
+        </Update>
+    </History>
+</PISI>

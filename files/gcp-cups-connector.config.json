@@ -1,0 +1,6 @@
+{
+  "local_printing_enable": true,
+  "cloud_printing_enable": false,
+  "log_level": "INFO",
+  "log_file_name": "/var/log/cloud-print-connector.log"
+}

@@ -1,0 +1,36 @@
+From ba2c5bfb9bf96dba51fecc1ce10a9f9fcfc3f84e Mon Sep 17 00:00:00 2001
+From: Pierre-Yves <pyu@riseup.net>
+Date: Tue, 10 Oct 2017 19:00:39 +0200
+Subject: [PATCH] Fix broken service
+
+Signed-off-by: Pierre-Yves <pyu@riseup.net>
+---
+ .../cloud-print-connector/systemd/cloud-print-connector.service  | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
+
+diff --git a/src/github.com/google/cloud-print-connector/systemd/cloud-print-connector.service b/src/github.com/google/cloud-print-connector/systemd/cloud-print-connector.service
+index 9cc5b90..7908e60 100644
+--- a/src/github.com/google/cloud-print-connector/systemd/cloud-print-connector.service
++++ b/src/github.com/google/cloud-print-connector/systemd/cloud-print-connector.service
+@@ -7,13 +7,14 @@
+ [Unit]
+ Description=Google Cloud Print Connector
+ Documentation="https://github.com/google/cloud-print-connector"
+-After=cups.service avahi-daemon.service network-online.target
+-Wants=cups.service avahi-daemon.service network-online.target
++After=org.cups.cupsd.service avahi-daemon.service network-online.target
++Wants=org.cups.cupsd.service avahi-daemon.service network-online.target
++
+ 
+ [Service]
+-ExecStart=/opt/cloud-print-connector/gcp-cups-connector -config-filename /opt/cloud-print-connector/gcp-cups-connector.config.json
++ExecStart=/usr/bin/gcp-cups-connector -config-filename /usr/share/cloud-print-connector/gcp-cups-connector.config.json
+ Restart=on-failure
+-User=cloud-print-connector
++User=lp
+ 
+ [Install]
+ WantedBy=multi-user.target
+-- 
+2.14.2
+

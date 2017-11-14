@@ -1,0 +1,29 @@
+name       : cloud-print-connector
+version    : 1.13
+release    : 1
+source     :
+    - https://solus-project.com/sources/golang-revendor/cloud-print-connector-v1.13.tar.xz : 1cbfdafe7c8eaeb7399fa607b66f7a240ecf29759ee3b8a06398ee2e17a60ba5
+license    : BSD-3-Clause
+component  : desktop.core
+summary    : Google Cloud Print Connector
+description: |
+    Share printers from your computer with ChromeOS and Android devices, using the Cloud Print Connector. The Connector is a purpose-built system process.
+builddeps  :
+    - pkgconfig(avahi-glib)
+    - cups-devel
+    - golang
+setup      : |
+    %patch -p1 < $pkgfiles/0001-Fix-broken-service.patch
+install    : |
+    export GOPATH=`pwd`
+    export pkg_home="github.com/google/cloud-print-connector"
+
+    go install -v $pkg_home/gcp-cups-connector
+    go install -v $pkg_home/gcp-connector-util
+
+    install -Dm00755 bin/gcp-cups-connector $installdir/usr/bin/gcp-cups-connector
+    install -Dm00755 bin/gcp-connector-util $installdir/usr/bin/gcp-connector-util
+
+    install -Dm00644 src/$pkg_home/systemd/cloud-print-connector.service $installdir/%libdir%/systemd/system/cloud-print-connector.service
+    install -Dm00644 $pkgfiles/gcp-cups-connector.config.json $installdir/usr/share/cloud-print-connector.service/gcp-cups-connector.config.json
+
