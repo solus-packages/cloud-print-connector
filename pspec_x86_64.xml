@@ -19,14 +19,15 @@
 </Description>
         <PartOf>desktop.core</PartOf>
         <Files>
-            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="executable">/usr/bin/gcp-connector-util</Path>
+            <Path fileType="executable">/usr/bin/gcp-cups-connector</Path>
             <Path fileType="library">/usr/lib64/systemd/system/cloud-print-connector.service</Path>
             <Path fileType="data">/usr/share/cloud-print-connector.service/gcp-cups-connector.config.json</Path>
         </Files>
     </Package>
     <History>
-        <Update release="1">
-            <Date>2017-11-07</Date>
+        <Update release="2">
+            <Date>2018-08-05</Date>
             <Version>1.13</Version>
             <Comment>Packaging update</Comment>
             <Name>Pierre-Yves</Name>

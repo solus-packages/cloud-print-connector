@@ -1,6 +1,6 @@
 name       : cloud-print-connector
 version    : 1.13
-release    : 1
+release    : 2
 source     :
     - https://solus-project.com/sources/golang-revendor/cloud-print-connector-v1.13.tar.xz : 1cbfdafe7c8eaeb7399fa607b66f7a240ecf29759ee3b8a06398ee2e17a60ba5
 license    : BSD-3-Clause
