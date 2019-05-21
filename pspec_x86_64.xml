@@ -2,15 +2,15 @@
     <Source>
         <Name>cloud-print-connector</Name>
         <Packager>
-            <Name>Pierre-Yves</Name>
-            <Email>pyu@riseup.net</Email>
+            <Name>F. von Gellhorn</Name>
+            <Email>flinux@vongellhorn.ch</Email>
         </Packager>
         <License>BSD-3-Clause</License>
         <PartOf>desktop.core</PartOf>
         <Summary xml:lang="en">Google Cloud Print Connector</Summary>
         <Description xml:lang="en">Share printers from your computer with ChromeOS and Android devices, using the Cloud Print Connector. The Connector is a purpose-built system process.
 </Description>
-        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://solus-project.com/sources/README.Solus</Archive>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
     </Source>
     <Package>
         <Name>cloud-print-connector</Name>
@@ -26,12 +26,12 @@
         </Files>
     </Package>
     <History>
-        <Update release="2">
-            <Date>2018-08-05</Date>
+        <Update release="3">
+            <Date>2019-05-20</Date>
             <Version>1.13</Version>
             <Comment>Packaging update</Comment>
-            <Name>Pierre-Yves</Name>
-            <Email>pyu@riseup.net</Email>
+            <Name>F. von Gellhorn</Name>
+            <Email>flinux@vongellhorn.ch</Email>
         </Update>
     </History>
 </PISI>
